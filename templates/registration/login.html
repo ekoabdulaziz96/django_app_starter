@@ -1,0 +1,32 @@
+{% extends 'templates_auth.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-body">
+          <h2>Log in</h2>
+          <form method="post" novalidate>
+            {% csrf_token %}
+            {{ form|crispy }}
+            <br>
+            {% comment %} <p>Username terdaftar :</p>
+            <ul>
+              <li>(administrator) - doni_doni</li>
+              <li>(pakar) - yohanes_yohanes</li>
+              <li>(pakar) - andika_andika</li>
+              <li>(manajer) - baskoro_baskoro</li>
+              <li>(manajer) - mochamad_soleh</li>
+            </ul>
+
+            <p>password : indonesiapower_expert</p> {% endcomment %}
+            <button type="submit" class="btn btn-primary">Log in</button>
+            <a href="{% url 'password_reset' %}" class="btn btn-link">Forgot your password?</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,75 @@
+
+{% extends 'templates.html' %}
+{% load static %}
+
+{% comment %} CSS {% endcomment %}
+{% block app_style %}
+    {% comment %} <link rel="stylesheet" href="{% static 'css/style.css' %} "> {% endcomment %}
+{% endblock app_style %}
+
+{% comment %} CONTENT {% endcomment %}
+{% block content_header %}
+{% endblock content_header %}
+
+{% block content %}
+
+    <div class="mt-5 container">
+    {% comment %} header {% endcomment %}
+        <div class="row">
+          <div class="col-md-12 grid-margin text-center">
+             <h3>SELAMAT DATANG di SIOBE</h3>
+             <h5>Selamat menggunakan Sistem Informasi Akreditasi Indonesian Accreditation Board for Engineering Education Departemen Teknik Industri</h5>
+          </div>
+        </div>
+      <br>
+{% comment %} content {% endcomment %}
+              <div class="card">
+                <div class="card-header alert-warning" >
+                  <h6> <u> Deskripsi aplikasi</u>: </h6>
+                  <p>Akreditasi IABEE memastikan program studi menyiapkan lulusan yang memenuhi standar dan kualifikasi internasional untuk memasuki dunia profesi melalui proses pendidikan yang mengacu pada hasil capaian pembelajaran. Akreditasi bukanlah tujuan, namun sarana untuk memastikan perbaikan kualitas pendidikan teknik terus menerus</p>
+                   
+                </div>
+                <div class="card-body">
+                  {% comment %} <p> Referensi :</p>
+                  <ol>
+                    <li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html" target='_blank'>Random Forest Scikit Learn</a></li>
+                    <li><a href="https://scikit-learn.org/stable/_downloads/scikit-learn-docs.pdf" target='_blank'>Manual Book Scikit Learn</a></li>
+                    <li><a href="https://medium.com/@srnghn/the-mathematics-of-decision-trees-random-forest-and-feature-importance-in-scikit-learn-and-spark-f2861df67e3" target='_blank'>Feature Importance</a></li>
+                  </ol> {% endcomment %}
+              
+                </div>
+              </div>
+
+    </div>
+    {% comment %} <div class="container"> <br><br><br></div>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br> {% endcomment %}
+{% endblock content %}
+
+
+{% comment %} JAVASCRIPTS {% endcomment %}
+{% block app_scripts %}
+    {% comment %} <script src="{% static 'buku/js/script.js' %}"></script> {% endcomment %}
+    <script>
+    (function($) {
+        'use strict';
+        $(function() {
+           $("#home").addClass('active');
+            
+          {% if messages %}
+            {% for message in messages %}
+              swal({
+                type: 'success',
+                title: 'Berhasil!',
+                text: '{{message}}',
+                timer: 2500
+              });
+            {% endfor %}
+          {% endif %}
+
+        });
+    })(jQuery);
+    </script>
+{% endblock app_scripts %}
