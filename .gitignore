@@ -111,10 +111,3 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-backend/latihan_rest
-latihan
-flask-backend
-
-# Procfile
-requirements.txt
-# runtime.txt
